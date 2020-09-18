@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Style the input container */
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Style the form icons */
+.icon {
+    padding: 10px;
+    background: dodgerblue;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+.icon2 {
+    padding: 10px;
+    background: #E1306C;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+.icon3 {
+    padding: 10px;
+    background: #4267B2;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}

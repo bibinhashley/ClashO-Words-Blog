@@ -1,0 +1,10 @@
+{%extends 'blog/base.html'%} {%load static%} {%block head%}
+{%for draft in drafts%}
+
+<h1 class="post__header">
+    <span>{{draft}}</span>
+</h1>
+
+
+{%endfor%}
+{%endblock head%}

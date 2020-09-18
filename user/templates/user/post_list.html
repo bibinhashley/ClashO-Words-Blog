@@ -1,0 +1,15 @@
+{%extends 'blog/base.html'%} {%load static%} {%block head%}
+{%for post in published_posts%}
+
+<h1 class="post__header">
+    <span>{{post.title}}</span>
+</h1>
+
+
+<p><time class="post__time">{{post.date_published}}</time></p>
+
+
+<p class="post__text">{{draft.content }}</p>
+
+{%endfor%}
+{%endblock head%}

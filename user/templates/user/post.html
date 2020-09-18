@@ -1,0 +1,47 @@
+{%extends 'blog/base.html'%}
+{%load htmlattributes%}
+{%block head%}
+
+<h1><span>Create Post</span></h1>
+<form method="post">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                {% csrf_token %}
+
+
+                <div class="row align-items-center">
+                    <div class="col mt-4">
+                        {{form.title.errors}}
+                        {{form.title|htmlattributes:"class:form-control, placeholder: Title"}}
+                    </div>
+                </div>
+
+
+                <div class="row align-items-center mt-4">
+                    <div class="col">
+                        {{form.content|htmlattributes:"class:form-control, placeholder:Content"}}
+                    </div>
+
+
+                </div>
+                <small class="muted">{{form.content.errors}}</small>
+                <div class="row justify-content-start mt-4">
+                    <div class="col">
+                        <button type='submit' class="btn btn-info"><a href="{%url 'publish' pk%}">Publish</a></button>
+                        <input type="submit" value="Draft" class="btn btn-info">
+                        <button type='submit' class="btn btn-info"><a href="{%url 'post_list' user%}">Cancel</a></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+
+{%endblock head%}

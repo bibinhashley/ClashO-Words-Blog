@@ -1,0 +1,15 @@
+{%extends 'blog/base.html'%} {%load static%} {%block head%}
+<link rel="stylesheet" href="{%static 'user/post_detail.css'%}" />
+
+<header>
+    <h1 class="post__header">
+        <span>{{post_detail.title}}</span>
+    </h1>
+    <span class="post__category">{{post_detail.author}}</span>
+
+    <br /><time class="post__time">Jan 22 2017</time>
+</header>
+
+<p class="post__text">{{post_detail.content }}</p>
+
+{%endblock head%}

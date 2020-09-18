@@ -1,0 +1,81 @@
+{%extends 'blog/base.html'%}
+{%load static%}
+{%load htmlattributes%}
+{%block head%}
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{%static 'user/addsocial.css'%}">
+<div class="section full-height">
+    <div class="absolute-center">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Social Media</h1>
+                        <form method="post">
+
+                            <div class="container">
+                                <div class="row justify-content-center">
+
+                                    <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                                        {% csrf_token %}
+
+
+
+
+
+                                        <div class="row align-items-center">
+
+                                            <div class="col mt-4 input-container">
+                                                <i class="fa fa-twitter icon"></i>
+                                                {{profileform.twitter.errors}}
+
+                                                {{profileform.twitter|htmlattributes:"class:form-control, placeholder: Twitter"}}
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row align-items-center">
+
+                                            <div class="col mt-4 input-container">
+                                                <i class="fa fa-instagram icon2"></i>
+                                                {{profileform.instagrm.errors}}
+
+                                                {{profileform.instagram|htmlattributes:"class:form-control, placeholder: Instagram"}}
+
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+
+                                            <div class="col mt-4 input-container">
+                                                <i class="fa fa-facebook icon3"></i>
+                                                {{profileform.facebook.errors}}
+
+                                                {{profileform.facebook|htmlattributes:"class:form-control, placeholder: Facebook"}}
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-start mt-4">
+                                            <div class="col">
+                                                <input type="submit" value="Submit" class="btn btn-primary mt-2">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+{%endblock head%}
+{%block body%}
+{%endblock body%}

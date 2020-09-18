@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+
+
+.sidebar_wrapper {
+    width: 100%;
+    max-width: 26rem;
+}
+
+.about-dev {
+    width: 100%;
+    max-width: 26rem;
+    margin: auto;
+    box-shadow: 2px 4px 2px -2px rgba(0, 0, 0, .3), -2px -4px 15px -2px rgba(0, 0, 0, .2);
+    animation: profile_in 0.8s;
+}
+
+@keyframes profile_in {
+    0% {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* profile card header */
+
+.profile-card_header-container {
+    max-width: 15rem;
+    margin: auto;
+}
+
+.profile-card_header {
+    background: #272727;
+    border-left: 0.625rem solid #97ece1;
+    padding: 1.5em 1.5em 1em;
+    text-align: center;
+}
+
+
+/* profile picture */
+
+.profile-card_header-imgbox {
+    display: block;
+    width: 9.5rem;
+    height: 9.5rem;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: auto;
+    background: rgba(250, 214, 195, 1);
+    border: 0.375rem solid rgba(250, 214, 195, 1);
+}
+
+.profile-card_header img {
+    max-width: 100%;
+    filter: grayscale(100%);
+}
+
+
+/* header heading */
+
+.profile-card_header h1 {
+    color: #f3f3f3;
+    font-size: 1.5rem;
+    margin-top: 0.8em;
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    position: relative;
+}
+
+
+/* header text span */
+
+.profile-card_header h1 span {
+    font-size: 1.2rem;
+    font-weight: 300;
+    display: block;
+    color: rgba(220, 220, 220, .95);
+    margin-top: 0.25em;
+    padding-top: 0.25em;
+    border-top: 0.075em solid rgba(250, 214, 195, 1);
+}
+
+
+/* about section */
+
+.profile-card_about {
+    line-height: 1.5;
+    background: #ededed;
+    padding: 1.5em 2rem;
+    color: #222;
+    font-family: 'Lato', sans-serif;
+}
+
+.profile-card_about h2 {
+    margin: 0;
+    display: inline-block;
+    color: #333;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 2;
+    vertical-align: middle;
+}
+
+.profile-card_about h2::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    /*  max-width: 13.8rem;
+  */
+    height: 1rem;
+    background: #c6f1eb;
+    left: -5px;
+    top: 50%;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+/* Color Variables */
+/* Social Icon Mixin */
+/* Social Icons */
+.social-icons {
+    display: -webkit-box;
+    display: flex;
+}
+
+.social-icon {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+}
+
+.social-icon:hover {
+    color: #fff;
+}
+
+.social-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate(-50%, -150%);
+    transform: translate(-50%, -150%);
+}
+
+.social-icon:active {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+}
+
+
+.social-icon--twitter {
+    background: #2b97f1;
+    color: #fff;
+}
+
+.social-icon--twitter .tooltip {
+    background: #2b97f1;
+    color: currentColor;
+}
+
+.social-icon--twitter .tooltip:after {
+    border-top-color: #2b97f1;
+}
+
+
+
+.social-icon--facebook {
+    background: #3b5a9b;
+    color: #fff;
+}
+
+.social-icon--facebook .tooltip {
+    background: #3b5a9b;
+    color: currentColor;
+}
+
+.social-icon--facebook .tooltip:after {
+    border-top-color: #3b5a9b;
+}
+
+.social-icon--instagram {
+    background: #527fa6;
+    color: #fff;
+}
+
+.social-icon--instagram .tooltip {
+    background: #527fa6;
+    color: currentColor;
+}
+
+.social-icon--instagram .tooltip:after {
+    border-top-color: #527fa6;
+}
+
+
+
+/* Tooltips */
+.tooltip {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    padding: 0.8rem 1rem;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    text-transform: uppercase;
+    -webkit-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.tooltip:after {
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: "";
+    border: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: transparent;
+    -webkit-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center a {
+    margin: 0 5px;
+}
+
+a:link {
+    text-decoration: none;
+}

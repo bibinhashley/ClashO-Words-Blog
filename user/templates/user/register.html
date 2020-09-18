@@ -1,0 +1,62 @@
+{%extends 'blog/base.html'%}
+{%load htmlattributes%}
+{%block head%}
+
+<h1><span>Register</span></h1>
+<form method="post">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                <div class="row align-items-center">
+                    {% csrf_token %}
+                    <div class="col mt-4">
+                        {{userform.first_name|htmlattributes:"class:form-control, placeholder:First Name, autofocus:True"}}
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col mt-4">
+                        {{userform.last_name|htmlattributes:"class:form-control, placeholder:Last Name"}}
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col mt-4">
+                        {{userform.username.errors}}
+                        {{userform.username|htmlattributes:"class:form-control, placeholder: Username"}}
+                    </div>
+                </div>
+                <div class="row align-items-center mt-4">
+                    <div class="col">
+                        {{userform.email.errors}}
+                        {{userform.email|htmlattributes:"class:form-control, placeholder:Email"}}
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-4">
+                    <div class="col">
+                        {{userform.password1|htmlattributes:"class:form-control, placeholder:Password"}}
+                    </div>
+                    <div class="col">
+
+                        {{userform.password2|htmlattributes:"class:form-control, placeholder:Verify Password"}}
+
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-start mt-4">
+                    <div class="col">
+                        <input type="submit" value="Register" class="btn btn-primary mt-2">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+
+{%endblock head%}
